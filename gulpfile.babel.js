@@ -16,6 +16,10 @@ import autoprefixer from 'gulp-autoprefixer';
 import csscomb from 'gulp-csscomb';
 import cssbeautify from 'gulp-cssbeautify';
 
+// Scripts
+import babel from 'gulp-babel';
+import uglify from 'gulp-uglify';
+
 /**
  * Paths to project folders
  */
@@ -23,6 +27,10 @@ import cssbeautify from 'gulp-cssbeautify';
 const paths = {
  	input: 'src/**/*',
  	output: 'dist/',
+ 	scripts: {
+ 		input: 'src/js/*.js',
+ 		output: 'dist/js/'
+ 	},
  	styles: {
  		input: 'src/sass/**/*.{scss,sass}',
  		output: 'dist/css/'
@@ -32,6 +40,18 @@ const paths = {
 /**
  * Gulp Tasks
  */
+
+// Minify and concatenate scripts
+gulp.task('build;scripts', () => {
+	gulp.src(paths.scripts.input)
+		.pipe(babel())
+		.pipe(gulp.dest(paths.scripts.output))
+		.pipe(rename({
+			suffix: '.min'
+		}))
+		.pipe(uglify())
+		.pipe(gulp.dest(paths.scripts.output));
+});
 
 // Process and minify Sass files 
 gulp.task('build:styles', () => {
@@ -64,6 +84,7 @@ gulp.task('build:styles', () => {
 // Compile files
 gulp.task('compile', 
 	[
+		'build;scripts',
 		'build:styles'
 	]
 );
