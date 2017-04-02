@@ -1,0 +1,23 @@
+{
+  "name": "gulp-boilerplate",
+  "version": "1.0.0",
+  "description": "Gulp Boilerplate by Jean Law Yim Wan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlyw/gulp-boilerplate.git"
+  },
+  "author": "Jean Law Yim Wan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jlyw/gulp-boilerplate/issues"
+  },
+  "homepage": "https://github.com/jlyw/gulp-boilerplate#readme",
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0"
+  }
+}
