@@ -2,7 +2,7 @@
  * Gulp packages
  */
 
- // default
+// default
 import gulp from 'gulp';
 import sourcemaps from 'gulp-sourcemaps';
 import rename from 'gulp-rename';
@@ -19,15 +19,21 @@ import cssbeautify from 'gulp-cssbeautify';
 /**
  * Paths to project folders
  */
- const paths = {
+
+const paths = {
  	input: 'src/**/*',
  	output: 'dist/',
  	styles: {
  		input: 'src/sass/**/*.{scss,sass}',
  		output: 'dist/css/'
  	}
- };
+};
 
+/**
+ * Gulp Tasks
+ */
+
+// Process and minify Sass files 
 gulp.task('build:styles', () => {
 	return gulp.src(paths.styles.input)
 		// https://github.com/sass/node-sass
@@ -51,18 +57,25 @@ gulp.task('build:styles', () => {
 		.pipe(gulp.dest(paths.styles.output));
 });
 
+/**
+ * Task Runners
+ */
+
+// Compile files
 gulp.task('compile', 
 	[
 		'build:styles'
 	]
-)
+);
 
+// Listen for file changes
 gulp.task('watch', () => {
 	gulp.watch(paths.input, ['default']);
 });
 
+// Compile files (default)
 gulp.task('default',
 	[
 		'compile'
 	]
-)
+);

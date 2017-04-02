@@ -20,11 +20,11 @@ Add your files to the appropriate `src` subdirectories. Gulp will process and an
 ```
 gulp-boilerplate
 |-- dist/
-|		|-- css/
-|				|-- # stylesheets
+|   |-- css/
+|      |-- # stylesheets
 |-- src/
-|		|-- sass/
-|				|-- # sass files
+|   |-- sass/
+|      |-- # sass files
 |-- .babelrc
 |-- gulpfile.babel.js
 |-- package.json
