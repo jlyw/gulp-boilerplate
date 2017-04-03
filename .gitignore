@@ -1,5 +1,7 @@
 node_modules/
 .idea/
+assets/css/
+assets/js/
 
 ## OS X
 .DS_Store
