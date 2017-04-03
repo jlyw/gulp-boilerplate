@@ -6,7 +6,6 @@
 import gulp from 'gulp';
 import sourcemaps from 'gulp-sourcemaps';
 import rename from 'gulp-rename';
-import watch from 'gulp-watch';
 import flatten from 'gulp-flatten';
 
 // Styles
@@ -26,14 +25,14 @@ import uglify from 'gulp-uglify';
 
 const paths = {
  	input: 'src/**/*',
- 	output: 'dist/',
+ 	output: 'assets/',
  	scripts: {
  		input: 'src/js/*.js',
- 		output: 'dist/js/'
+ 		output: 'assets/js/'
  	},
  	styles: {
  		input: 'src/sass/**/*.{scss,sass}',
- 		output: 'dist/css/'
+ 		output: 'assets/css/'
  	}
 };
 
