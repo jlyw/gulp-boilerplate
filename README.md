@@ -32,8 +32,12 @@ Add your files to the appropriate `src` subdirectories. Gulp will process and an
 gulp-boilerplate
 |-- assets/
 |   |-- css/
+|   |   |-- # stylesheets from Sass files
 |   |   |-- style.css
 |   |   |-- style.min.css
+|   |   |-- # stylesheets from Less files
+|   |   |-- main.css
+|   |   |-- main.min.css
 |   |-- js/
 |   |   |-- script.js
 |   |   |-- script.min.js
@@ -45,6 +49,8 @@ gulp-boilerplate
 |   |   |   |-- _include-media.scss
 |   |   |   |-- _normalize.scss
 |   |   |-- style.scss
+|   |-- less/
+|   |   |-- main.less
 |   |-- js/
 |   |   |-- script.js
 |-- .babelrc
@@ -65,19 +71,33 @@ const paths = {
     output: 'assets/js/'
   },
   styles: {
-    input: 'src/sass/**/*.{scss,sass}',
-    output: 'assets/css/'
+    sass: {
+      input: 'src/sass/**/*.{scss,sass}',
+      output: 'assets/css/'
+  },
+    less: {
+      input: 'src/less/**/*.less',
+      output: 'assets/css/'
+    }
   }
 };
 ```
 
 ## Working with the source files
 
+Do not forget to clean the unused files like `main.less`.
+
+This gulpfile compiles both Sass and Less files. You can choose the one you want to use in your project.
+
 ### Sass
 
-Sass files are located in `src/sass`. ulp generates minified and unminified CSS files in `assets/css`. It also includes autoprefixer, which adds vendor prefixes for you if required by the last two versions of a browser.
+Sass files are located in `src/sass`. gulp generates minified and unminified CSS files in `assets/css`. It also includes autoprefixer, which adds vendor prefixes for you if required by the last two versions of a browser.
 
 This boilerplate includes Normalize.css and Include-media.css.
+
+### Less
+
+Less files are located in `src/less`. gulp generates minified and unminified CSS files in `assets/css`. It also includes autoprefixer, which adds vendor prefixes for you if required by the last two versions of a browser.
 
 ### JS
 
