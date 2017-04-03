@@ -90,7 +90,8 @@ gulp.task('compile',
 
 // Listen for file changes
 gulp.task('watch', () => {
-	gulp.watch(paths.input, ['default']);
+	gulp.watch(paths.styles.input, ['build:styles']);
+	gulp.watch(paths.scripts.input, ['build:scripts']);
 });
 
 // Compile files (default)
