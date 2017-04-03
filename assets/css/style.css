@@ -1,0 +1,452 @@
+/*! normalize.css v6.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+/* line 12, src/sass/config/_normalize-6.0.0.scss */
+html {
+  line-height: 1.15;
+    /* 1 */
+  -ms-text-size-adjust: 100%;
+    /* 2 */
+  -webkit-text-size-adjust: 100%;
+    /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 25, src/sass/config/_normalize-6.0.0.scss */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+/* line 39, src/sass/config/_normalize-6.0.0.scss */
+h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+/* line 52, src/sass/config/_normalize-6.0.0.scss */
+figcaption,
+figure,
+main {
+    /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+/* line 62, src/sass/config/_normalize-6.0.0.scss */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+/* line 71, src/sass/config/_normalize-6.0.0.scss */
+hr {
+    /* 1 */
+  overflow: visible;
+  box-sizing: content-box;
+    /* 1 */
+  height: 0;
+    /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 82, src/sass/config/_normalize-6.0.0.scss */
+pre {
+  font-family: monospace, monospace;
+    /* 1 */
+  font-size: 1em;
+    /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+/* line 95, src/sass/config/_normalize-6.0.0.scss */
+a {
+  background-color: transparent;
+    /* 1 */
+  -webkit-text-decoration-skip: objects;
+    /* 2 */
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+/* line 105, src/sass/config/_normalize-6.0.0.scss */
+abbr[title] {
+    /* 1 */
+  text-decoration: underline;
+    /* 2 */
+  text-decoration: underline dotted;
+  border-bottom: none;
+    /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+/* line 115, src/sass/config/_normalize-6.0.0.scss */
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+/* line 124, src/sass/config/_normalize-6.0.0.scss */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 134, src/sass/config/_normalize-6.0.0.scss */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+    /* 1 */
+  font-size: 1em;
+    /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+/* line 145, src/sass/config/_normalize-6.0.0.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+/* line 153, src/sass/config/_normalize-6.0.0.scss */
+mark {
+  color: #000;
+  background-color: #ff0;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+/* line 162, src/sass/config/_normalize-6.0.0.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+/* line 171, src/sass/config/_normalize-6.0.0.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 179, src/sass/config/_normalize-6.0.0.scss */
+sub {
+  bottom: -.25em;
+}
+
+/* line 183, src/sass/config/_normalize-6.0.0.scss */
+sup {
+  top: -.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 194, src/sass/config/_normalize-6.0.0.scss */
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+/* line 203, src/sass/config/_normalize-6.0.0.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on img inside links in IE 10-.
+ */
+/* line 212, src/sass/config/_normalize-6.0.0.scss */
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+/* line 220, src/sass/config/_normalize-6.0.0.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Remove the margin in Firefox and Safari.
+ */
+/* line 231, src/sass/config/_normalize-6.0.0.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+/* line 244, src/sass/config/_normalize-6.0.0.scss */
+button,
+input {
+    /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+/* line 254, src/sass/config/_normalize-6.0.0.scss */
+button,
+select {
+    /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+/* line 265, src/sass/config/_normalize-6.0.0.scss */
+button,
+html [type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+    /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+/* line 276, src/sass/config/_normalize-6.0.0.scss */
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+/* line 288, src/sass/config/_normalize-6.0.0.scss */
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+/* line 302, src/sass/config/_normalize-6.0.0.scss */
+legend {
+    /* 2 */
+  display: table;
+  box-sizing: border-box;
+    /* 1 */
+  max-width: 100%;
+    /* 1 */
+  padding: 0;
+    /* 3 */
+  white-space: normal;
+    /* 1 */
+  color: inherit;
+    /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+/* line 316, src/sass/config/_normalize-6.0.0.scss */
+progress {
+  display: inline-block;
+    /* 1 */
+  vertical-align: baseline;
+    /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+/* line 325, src/sass/config/_normalize-6.0.0.scss */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+/* line 334, src/sass/config/_normalize-6.0.0.scss */
+[type='checkbox'],
+[type='radio'] {
+  box-sizing: border-box;
+    /* 1 */
+  padding: 0;
+    /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+/* line 344, src/sass/config/_normalize-6.0.0.scss */
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+/* line 354, src/sass/config/_normalize-6.0.0.scss */
+[type='search'] {
+    /* 1 */
+  outline-offset: -2px;
+  -webkit-appearance: textfield;
+    /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+/* line 363, src/sass/config/_normalize-6.0.0.scss */
+[type='search']::-webkit-search-cancel-button,
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+/* line 373, src/sass/config/_normalize-6.0.0.scss */
+::-webkit-file-upload-button {
+    /* 1 */
+  font: inherit;
+  -webkit-appearance: button;
+    /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+/* line 386, src/sass/config/_normalize-6.0.0.scss */
+details,
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+/* line 395, src/sass/config/_normalize-6.0.0.scss */
+summary {
+  display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 406, src/sass/config/_normalize-6.0.0.scss */
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+/* line 414, src/sass/config/_normalize-6.0.0.scss */
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+/* line 425, src/sass/config/_normalize-6.0.0.scss */
+[hidden] {
+  display: none;
+}
