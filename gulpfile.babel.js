@@ -11,6 +11,7 @@ import flatten from 'gulp-flatten';
 // Styles
 import cssnano from 'gulp-cssnano';
 import sass from 'gulp-sass';
+import less from 'gulp-less';
 import autoprefixer from 'gulp-autoprefixer';
 import csscomb from 'gulp-csscomb';
 import cssbeautify from 'gulp-cssbeautify';
@@ -31,8 +32,14 @@ const paths = {
  		output: 'assets/js/'
  	},
  	styles: {
- 		input: 'src/sass/**/*.{scss,sass}',
- 		output: 'assets/css/'
+ 		sass: {
+		  input: 'src/sass/**/*.{scss,sass}',
+		  output: 'assets/css/'
+	  },
+ 		less: {
+		  input: 'src/less/**/*.less',
+		  output: 'assets/css/'
+	  }
  	}
 };
 
@@ -53,8 +60,8 @@ gulp.task('build;scripts', () => {
 });
 
 // Process and minify Sass files 
-gulp.task('build:styles', () => {
-	return gulp.src(paths.styles.input)
+gulp.task('build:styles:sass', () => {
+	return gulp.src(paths.styles.sass.input)
 		// https://github.com/sass/node-sass
 		.pipe(sass({
 			outputStyle: 'expanded',
@@ -66,14 +73,35 @@ gulp.task('build:styles', () => {
 		}))
 		.pipe(csscomb())
     .pipe(cssbeautify({indent: '  '}))
-		.pipe(gulp.dest(paths.styles.output))
+		.pipe(gulp.dest(paths.styles.sass.output))
 		.pipe(sourcemaps.init())
 		.pipe(rename({
 			suffix: '.min'
 		}))
 		.pipe(cssnano())
 		.pipe(sourcemaps.write())
-		.pipe(gulp.dest(paths.styles.output));
+		.pipe(gulp.dest(paths.styles.sass.output));
+});
+
+// Process and minify Less files
+gulp.task('build:styles:less', () => {
+	return gulp.src(paths.styles.less.input)
+			.pipe(less())
+			.pipe(flatten())
+			.pipe(autoprefixer({
+				browsers: ['last 2 versions']
+			}))
+			.pipe(csscomb())
+			.pipe(cssbeautify({indent: '  '}))
+			.pipe(sourcemaps.write())
+			.pipe(gulp.dest(paths.styles.less.output))
+			.pipe(sourcemaps.init())
+			.pipe(rename({
+				suffix: '.min'
+			}))
+			.pipe(cssnano())
+			.pipe(sourcemaps.write())
+			.pipe(gulp.dest(paths.styles.less.output));
 });
 
 /**
@@ -84,13 +112,16 @@ gulp.task('build:styles', () => {
 gulp.task('compile', 
 	[
 		'build;scripts',
-		'build:styles'
+		'build:styles:sass',
+		'build:styles:less'
 	]
 );
 
 // Listen for file changes
 gulp.task('watch', () => {
-	gulp.watch(paths.input, ['default']);
+	gulp.watch(paths.styles.input, ['build:styles:sass']);
+	gulp.watch(paths.styles.input, ['build:styles:less']);
+	gulp.watch(paths.scripts.input, ['build:scripts']);
 });
 
 // Compile files (default)
