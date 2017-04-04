@@ -48,7 +48,7 @@ const paths = {
  */
 
 // Minify and concatenate scripts
-gulp.task('build;scripts', () => {
+gulp.task('build:scripts', () => {
 	gulp.src(paths.scripts.input)
 		.pipe(babel())
 		.pipe(gulp.dest(paths.scripts.output))
@@ -61,7 +61,7 @@ gulp.task('build;scripts', () => {
 
 // Process and minify Sass files 
 gulp.task('build:styles:sass', () => {
-	return gulp.src(paths.styles.sass.input)
+	gulp.src(paths.styles.sass.input)
 		// https://github.com/sass/node-sass
 		.pipe(sass({
 			outputStyle: 'expanded',
@@ -85,7 +85,7 @@ gulp.task('build:styles:sass', () => {
 
 // Process and minify Less files
 gulp.task('build:styles:less', () => {
-	return gulp.src(paths.styles.less.input)
+	gulp.src(paths.styles.less.input)
 			.pipe(less())
 			.pipe(flatten())
 			.pipe(autoprefixer({
@@ -119,9 +119,9 @@ gulp.task('compile',
 
 // Listen for file changes
 gulp.task('watch', () => {
-	gulp.watch(paths.styles.input, ['build:styles:sass']);
-	gulp.watch(paths.styles.input, ['build:styles:less']);
 	gulp.watch(paths.scripts.input, ['build:scripts']);
+	gulp.watch(paths.styles.sass.input, ['build:styles:sass']);
+	gulp.watch(paths.styles.less.input, ['build:styles:less']);
 });
 
 // Compile files (default)
