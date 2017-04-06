@@ -15,6 +15,7 @@ import less from 'gulp-less';
 import autoprefixer from 'gulp-autoprefixer';
 import csscomb from 'gulp-csscomb';
 import cssbeautify from 'gulp-cssbeautify';
+import notify from 'gulp-notify';
 
 // Scripts
 import babel from 'gulp-babel';
@@ -66,6 +67,9 @@ gulp.task('build:styles:sass', () => {
 		.pipe(sass({
 			outputStyle: 'expanded',
 			sourceComments: true
+		}).on('error', function(err) {
+      notify().write("Error on " + err.relativePath + " line " + err.line + " : " + err.messageOriginal);
+      this.emit('end');
 		}))
 		.pipe(flatten())
 		.pipe(autoprefixer({
@@ -111,7 +115,7 @@ gulp.task('build:styles:less', () => {
 // Compile files
 gulp.task('compile', 
 	[
-		'build;scripts',
+		'build:scripts',
 		'build:styles:sass',
 		'build:styles:less'
 	]
